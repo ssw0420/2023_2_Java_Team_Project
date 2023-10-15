@@ -87,5 +87,6 @@
 	<classpathentry kind="lib" path="C:/Users/신승우/Desktop/java_selenium/selenium-support-4.12.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/신승우/Desktop/java_selenium/selenium-support-4.12.1-sources.jar"/>
 	<classpathentry kind="lib" path="C:/app/dbhomeXE/jdbc/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/신승우/Desktop/라이브러리/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -317,7 +317,7 @@ public class Crawling_GS {
 				writer.write(all_products.toJSONString());
 				writer.flush();
 				writer.close();
-				System.out.println(all_products.toJSONString());
+//				System.out.println(all_products.toJSONString());
 			}
 			catch (IOException e) {
 				e.printStackTrace();
@@ -330,9 +330,10 @@ public class Crawling_GS {
 //				JSONArray product_Array = crawl.findproduct(menu, writer);
 				JSONObject all_products = crawl.findproduct(menu, writer);
 				writer.write(all_products.toJSONString());
+//				writer.setCharacterEncoding("UTF-8");
 				writer.flush();
 				writer.close();
-				System.out.println(all_products.toJSONString());
+//				System.out.println(all_products.toJSONString());
 			}
 			catch (IOException e) {
 				e.printStackTrace();

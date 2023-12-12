@@ -168,7 +168,7 @@ public class Crawling_GS {
         			
         			String jsonInfo = productArray.toJSONString();
                	 
-                    System.out.println(jsonInfo);
+//                    System.out.println(jsonInfo);
         			product_data.add(product);
             	}
             	
@@ -232,7 +232,7 @@ public class Crawling_GS {
         			
         			String jsonInfo = productArray.toJSONString();
         			product_data.add(product);
-        			System.out.println(jsonInfo);
+//        			System.out.println(jsonInfo);
         			
             	}
         		
@@ -308,18 +308,51 @@ public class Crawling_GS {
 	public static void main(String[] args) {
 		Crawling_GS crawl = new Crawling_GS(); // 드라이버 세팅
 		int menu = crawl.init(); // url 입력 함수
-		try(FileWriter writer = new FileWriter("src/crawling/gs25data.json"))
+		if(menu == 0)
 		{
-//			JSONArray product_Array = crawl.findproduct(menu, writer);
-			JSONObject all_products = crawl.findproduct(menu, writer);
-			writer.write(all_products.toJSONString());
-			writer.flush();
-			writer.close();
-			System.out.println(all_products.toJSONString());
+			try(FileWriter writer = new FileWriter("src/crawling/gs25data_event2+1.json"))
+			{
+//				JSONArray product_Array = crawl.findproduct(menu, writer);
+				JSONObject all_products = crawl.findproduct(menu, writer);
+				writer.write(all_products.toJSONString());
+				writer.flush();
+				writer.close();
+//				System.out.println(all_products.toJSONString());
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		catch (IOException e) {
-			e.printStackTrace();
+		else if(menu == 1)
+		{
+			try(FileWriter writer = new FileWriter("src/crawling/gs25data_event1+1.json"))
+			{
+//				JSONArray product_Array = crawl.findproduct(menu, writer);
+				JSONObject all_products = crawl.findproduct(menu, writer);
+				writer.write(all_products.toJSONString());
+//				writer.setCharacterEncoding("UTF-8");
+				writer.flush();
+				writer.close();
+//				System.out.println(all_products.toJSONString());
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+//		try(FileWriter writer = new FileWriter("src/crawling/gs25data_event1.json"))
+//		{
+////			JSONArray product_Array = crawl.findproduct(menu, writer);
+//			JSONObject all_products = crawl.findproduct(menu, writer);
+//			writer.write(all_products.toJSONString());
+//			writer.flush();
+//			writer.close();
+//			System.out.println(all_products.toJSONString());
+//		}
+//		catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		
+		
 		driver.quit(); // 모든 탭 종료
 		// close()는 여러 탭을 쓸 때 하나의 탭만 종료 - close로 모든 탭을 닫아도 process는 살아있음
 	}
